@@ -17,5 +17,11 @@ function draw(){
 
 //funcao cria bolinha 
 function criaBolinha (xBolinha, yBolinha, tamBolimha){
+    circle (xbolinha, ybolinha, tambolinha);
+}
 
+//funcao em bolinha
+function criabolinha (xbolinha, ybolinha, tambolinha){
+    xBolinha = xvelocidadebolinha + xbolinha;
+    ybolinha = yvelocidadebolinha + ybolinha;
 }
