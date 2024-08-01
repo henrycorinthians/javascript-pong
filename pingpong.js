@@ -27,7 +27,7 @@ function draw(){
     //chamando a função cria bolinha para criar a bolinha
     criaBolinha(xBolinha, yBolinha, tamBolinha);
     //chamando a função mov bolinha
-    moveBolinha();
+    movimentaBolinha();
     //chamando a borda
     bolinhaBorda();
     criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
@@ -37,6 +37,7 @@ function draw(){
 
 //função bolinha
 function criaBolinha(xBolinha, yBolinha,tamBolinha){
+    fill("red")
     circle (xBolinha,yBolinha,tamBolinha);
 }
 
@@ -57,8 +58,8 @@ function Borda(){
 
 //funçao cria raquete
 function criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete ) {
-    FileList("blue");
-    Reflect(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
+    fill("blue");
+    rect(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
 }
 //funcao responsavel pelo movimento da raquete
 function movimentaRaquete() {
@@ -74,7 +75,7 @@ function movimentaRaquete() {
 //funçao responsavel por quamdo bater na raquete retornar em direçao contraria
 function colideRaquete(){
 
-    if(xBolinha - raioBolinha < xRaquete + larguraRaquete && yBolinha - raioBolinha > yRaquete){
+    if(xBolinha - raioBolinha < xRaquete + larguraRaquete && yBolinha - raioBolinha < yRaquete + alturaRaquete && yBolinha + raioBolinha > yRaquete){
 
         xvelocidadeBolinha *= -1;
     }
